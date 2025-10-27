@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Zap, ArrowRight, CheckCircle2 } from 'lucide-react';
-import Spline from '@splinetool/react-spline';
+import SplineScene from './SplineScene.jsx';
 
 const container = {
   hidden: { opacity: 0, y: 20 },
@@ -26,12 +26,9 @@ export default function Hero() {
         <div className="absolute -bottom-40 left-0 h-96 w-[32rem] rounded-full bg-cyan-500/20 blur-3xl" />
       </div>
 
-      {/* Spline 3D Illustration */}
+      {/* Spline 3D Illustration (safe lazy load) */}
       <div className="absolute inset-0 opacity-70">
-        <Spline
-          scene="https://prod.spline.design/6Yh3WqH0mZqLr0r2/scene.splinecode"
-          style={{ width: '100%', height: '100%' }}
-        />
+        <SplineScene scene="https://prod.spline.design/Qe6dlWJktclXcUBS/scene.splinecode" />
       </div>
 
       {/* Gradient overlay to increase contrast without blocking interaction */}
